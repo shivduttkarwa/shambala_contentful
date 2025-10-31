@@ -1,0 +1,251 @@
+/* DREAM HOME JOURNEY SECTION */
+.dream-journey {
+  height: 90vh;    
+  position: relative;
+  padding: 65px 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #1a2838;
+  overflow: hidden;
+}
+
+.dream-journey::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 50%, rgba(91, 124, 79, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 70% 50%, rgba(26, 40, 56, 0.2) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.dream-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 40, 56, 0.92) 0%,
+    rgba(40, 56, 75, 0.88) 50%,
+    rgba(26, 40, 56, 0.92) 100%
+  );
+  z-index: 2;
+}
+
+.dream-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.02) 50%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.02) 50%, transparent 52%);
+  background-size: 40px 40px;
+  opacity: 0.3;
+}
+
+.dream-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.dream-title {
+  font-family: "Cinzel", serif;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-weight: 400;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dream-description {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.2rem;
+  line-height: 1.9;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 400;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.dream-ctas {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.dream-button {
+  display: inline-block;
+  padding: 20px 45px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Arrow that follows cursor */
+.dream-arrow {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  transition: transform 0.15s ease-out;
+  z-index: 10;
+}
+
+.dream-button-primary .dream-arrow {
+  color: var(--text);
+}
+
+.dream-button-primary:hover .dream-arrow {
+  color: white;
+}
+
+.dream-button-primary {
+  background: white;
+  color: var(--text);
+  border: 2px solid white;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+}
+
+.dream-button-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 50px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.dream-button-primary:hover::before {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.dream-button-primary:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(255, 255, 255, 0.4);
+}
+
+.dream-button-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.dream-button-secondary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 50px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.dream-button-secondary:hover::before {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.dream-button-secondary:hover {
+  background: transparent;
+  color: var(--text);
+  border-color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dream-journey {
+    padding: 80px 0;
+    background-attachment: scroll;
+  }
+
+  .dream-container {
+    padding: 0 30px;
+  }
+
+  .dream-description {
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+  }
+
+  .dream-ctas {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .dream-button {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 640px) {
+  .dream-journey {
+    padding: 60px 0;
+  }
+
+  .dream-container {
+    padding: 0 20px;
+  }
+
+  .dream-button {
+    padding: 16px 35px;
+    font-size: 0.95rem;
+  }
+}

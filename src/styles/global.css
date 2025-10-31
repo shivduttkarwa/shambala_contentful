@@ -1,0 +1,37 @@
+:root{
+  --accent:#5B7C4F;
+  --text:#2C2C2C;
+  --light-bg:#F5F3EE;
+  --cream:#FAF8F3;
+}
+
+html,body{overflow-x:hidden!important}
+body{
+  margin:0; color:var(--text);
+  background:var(--cream);
+  font-family:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* Optional but recommended: subtle blur + scale for the tiny placeholder */
+.lazy-img--blur {
+  filter: blur(12px);
+  transform: scale(1.04);
+  transition: opacity 250ms ease, filter 250ms ease, transform 250ms ease;
+  opacity: 1;
+}
+
+.lazy-img--hidden {
+  opacity: 0;           /* fade out blur layer after full image appears */
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.lazy-img--loaded {
+  opacity: 1;           /* real image fades in (inline style handles transition) */
+}
